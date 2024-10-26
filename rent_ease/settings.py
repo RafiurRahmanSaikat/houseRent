@@ -20,6 +20,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    "http://localhost:5173",
     "127.0.0.1",
     ".vercel.app",
     "https://*.127.0.0.1",
@@ -30,6 +31,9 @@ ALLOWED_HOSTS = [
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
+    "127.0.0.1",
+    ".vercel.app",
+    "https://*.127.0.0.1",
     "http://localhost:3000",
     "http://localhost:5173",
     "https://house-rent-ease.netlify.app",
