@@ -31,16 +31,18 @@ ALLOWED_HOSTS = [
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
-    "127.0.0.1",
-    ".vercel.app",
-    "https://*.127.0.0.1",
+    "http://127.0.0.1",
+    "https://127.0.0.1",
     "http://localhost:3000",
     "http://localhost:5173",
     "https://house-rent-ease.netlify.app",
     "https://house-rent-backend.onrender.com",
+    "https://house-rent-lyart.vercel.app",
 ]
 
+
 CSRF_TRUSTED_ORIGINS = [
+    "https://127.0.0.1",
     "https://*.127.0.0.1",
     "http://localhost:3000",
     "http://localhost:5173",
