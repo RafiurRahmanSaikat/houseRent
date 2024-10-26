@@ -20,10 +20,12 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "*",
+    "127.0.0.1",
+    ".vercel.app",
     "https://*.127.0.0.1",
     "https://house-rent-backend.onrender.com",
     "https://house-rent-ease.netlify.app",
+    "*",
 ]
 CORS_ALLOW_ALL_ORIGINS = True
 
@@ -56,7 +58,6 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
-    "django.contrib.staticfiles",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -72,7 +73,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    "django.middleware.security.SecurityMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -103,7 +103,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "rent_ease.wsgi.application"
+WSGI_APPLICATION = "rent_ease.wsgi.app"
 
 
 # ? Database Configuration
@@ -128,12 +128,14 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "postgres",
-        "USER": env("SUPABASE_DB_USER"),
-        "PASSWORD": env("SUPABASE_DB_PASSWORD"),
-        "HOST": env("SUPABASE_DB_HOST"),
+        "USER": os.environ.get("SUPABASE_DB_USER"),
+        "PASSWORD": os.environ.get("SUPABASE_DB_PASSWORD"),
+        "HOST": os.environ.get("SUPABASE_DB_HOST"),
         "PORT": "6543",
     }
 }
+
+
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
@@ -175,6 +177,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL = "/media/"
 
 
