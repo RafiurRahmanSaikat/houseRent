@@ -24,6 +24,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     ".vercel.app",
     "https://*.127.0.0.1",
+    "https://house-rent-lyart.vercel.app",
     "https://house-rent-backend.onrender.com",
     "https://house-rent-ease.netlify.app",
     "*",
@@ -32,7 +33,6 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1",
-    "https://127.0.0.1",
     "http://localhost:3000",
     "http://localhost:5173",
     "https://house-rent-ease.netlify.app",
@@ -48,6 +48,7 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
     "https://house-rent-backend.onrender.com",
     "https://house-rent-ease.netlify.app",
+    "https://house-rent-lyart.vercel.app",
 ]
 
 
